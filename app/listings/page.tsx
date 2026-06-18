@@ -1,7 +1,6 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
 import { Search, Map, List, Filter, SlidersHorizontal, X, Loader2 } from 'lucide-react';
 import { ListingCard } from '@/components/ListingCard';
 import { CategoryPill } from '@/components/CategoryPill';
@@ -153,14 +152,8 @@ export default function ListingsPage() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
         <div className="flex gap-6">
           {/* Filters Sidebar */}
-          <AnimatePresence>
-            {showFilters && (
-              <motion.aside
-                initial={{ width: 0, opacity: 0 }}
-                animate={{ width: 280, opacity: 1 }}
-                exit={{ width: 0, opacity: 0 }}
-                className="hidden lg:block flex-shrink-0"
-              >
+          {showFilters && (
+              <aside className="hidden lg:block flex-shrink-0 animate-in slide-in-from-left duration-300">
                 <div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-sm border border-gray-200 dark:border-gray-700 sticky top-32">
                   <div className="flex items-center justify-between mb-6">
                     <h3 className="font-semibold text-gray-900 dark:text-white">Filters</h3>
@@ -240,9 +233,8 @@ export default function ListingsPage() {
                     </div>
                   </div>
                 </div>
-              </motion.aside>
+              </aside>
             )}
-          </AnimatePresence>
 
           {/* Main Content */}
           <div className="flex-1">
@@ -307,20 +299,13 @@ export default function ListingsPage() {
       </div>
 
       {/* Mobile Filter Modal */}
-      <AnimatePresence>
-        {showFilters && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-black/50 z-50 lg:hidden"
+      {showFilters && (
+          <div
+            className="fixed inset-0 bg-black/50 z-50 lg:hidden animate-in fade-in duration-200"
             onClick={() => setShowFilters(false)}
           >
-            <motion.div
-              initial={{ x: '100%' }}
-              animate={{ x: 0 }}
-              exit={{ x: '100%' }}
-              className="absolute right-0 top-0 h-full w-80 bg-white dark:bg-gray-800 p-6 overflow-y-auto"
+            <div
+              className="absolute right-0 top-0 h-full w-80 bg-white dark:bg-gray-800 p-6 overflow-y-auto animate-in slide-in-from-right duration-300"
               onClick={(e) => e.stopPropagation()}
             >
               <div className="flex items-center justify-between mb-6">
@@ -378,10 +363,9 @@ export default function ListingsPage() {
               >
                 Apply Filters
               </Button>
-            </motion.div>
-          </motion.div>
+            </div>
+          </div>
         )}
-      </AnimatePresence>
     </div>
   );
 }
