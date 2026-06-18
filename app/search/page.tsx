@@ -175,7 +175,7 @@ export default function SearchPage() {
             {/* Search Results */}
             <div className="mb-6">
               <p className="text-gray-600 dark:text-gray-400">
-                {listings.length} results for "{query}"
+                {listings.length} results for &quot;{query}&quot;
               </p>
             </div>
 

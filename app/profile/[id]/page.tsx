@@ -261,7 +261,7 @@ export default async function ProfilePage({ params }: { params: { id: string } }
                 Safety Tips
               </h3>
               <ul className="space-y-2 text-sm text-blue-800 dark:text-blue-300">
-                <li>• Check the seller's trust score</li>
+                <li>• Check the seller&apos;s trust score</li>
                 <li>• Meet at verified safe zones</li>
                 <li>• Inspect items before payment</li>
                 <li>• Use PayMongo for secure payments</li>
