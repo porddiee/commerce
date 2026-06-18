@@ -1,6 +1,5 @@
 'use client';
 
-import { motion } from 'framer-motion';
 import { Bell, MapPin, Eye, MessageSquare, Package, Radio } from 'lucide-react';
 import { Listing } from '@/types';
 import { formatPrice, formatDistance } from '@/lib/utils';
@@ -17,10 +16,8 @@ export function ListingCard({ listing, onClick }: ListingCardProps) {
   const distance = Math.random() * 5 + 0.5; // Mock distance
 
   return (
-    <motion.div
-      whileHover={{ scale: 1.02 }}
-      whileTap={{ scale: 0.98 }}
-      className="bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden cursor-pointer border border-gray-200 dark:border-gray-700"
+    <div
+      className="bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden cursor-pointer border border-gray-200 dark:border-gray-700 transition-transform hover:scale-[1.02] active:scale-[0.98]"
       onClick={onClick}
     >
       <div className="relative aspect-[4/3] overflow-hidden">
@@ -83,6 +80,6 @@ export function ListingCard({ listing, onClick }: ListingCardProps) {
           <TrustBadge score={listing.seller.trustScore} size="sm" />
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 }
