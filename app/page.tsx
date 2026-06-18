@@ -5,7 +5,6 @@ import { CategoryPill } from '@/components/CategoryPill';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Search, MapPin } from 'lucide-react';
-import { motion } from 'framer-motion';
 import Link from 'next/link';
 
 export default async function HomePage() {
@@ -76,27 +75,17 @@ export default async function HomePage() {
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-brand-500 to-brand-600 text-white py-16 px-4">
         <div className="max-w-7xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-8"
-          >
+          <div className="text-center mb-8">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
               Buy & Sell Near You
             </h2>
             <p className="text-lg md:text-xl text-brand-100 mb-8">
               The trusted marketplace for your barangay community
             </p>
-          </motion.div>
+          </div>
 
           {/* Search Bar */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="max-w-3xl mx-auto"
-          >
+          <div className="max-w-3xl mx-auto">
             <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-4 flex flex-col sm:flex-row gap-4">
               <div className="flex-1 relative">
                 <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
@@ -113,8 +102,7 @@ export default async function HomePage() {
                 Search
               </Button>
             </div>
-
-          </motion.div>
+          </div>
         </div>
       </section>
 
