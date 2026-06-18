@@ -2,7 +2,6 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { motion } from 'framer-motion';
 import { ArrowLeft, Mail, Lock, Shield, User, Chrome, Loader2 } from 'lucide-react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
@@ -126,10 +125,7 @@ export default function LoginPage() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Buyer/Seller Login Portal */}
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            className={`bg-white dark:bg-gray-800 rounded-2xl shadow-xl overflow-hidden border-2 transition-all ${
+          <div className={`bg-white dark:bg-gray-800 rounded-2xl shadow-xl overflow-hidden border-2 transition-all ${
               loginType === 'buyer-seller'
                 ? 'border-brand-500 ring-4 ring-brand-500/20'
                 : 'border-gray-200 dark:border-gray-700'
@@ -236,13 +232,10 @@ export default function LoginPage() {
                 </Link>
               </p>
             </div>
-          </motion.div>
+          </div>
 
           {/* Admin Login Portal */}
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            className={`bg-gray-900 dark:bg-gray-950 rounded-2xl shadow-xl overflow-hidden border-2 transition-all ${
+          <div className={`bg-gray-900 dark:bg-gray-950 rounded-2xl shadow-xl overflow-hidden border-2 transition-all ${
               loginType === 'admin'
                 ? 'border-brand-500 ring-4 ring-brand-500/20'
                 : 'border-gray-700'
@@ -332,7 +325,7 @@ export default function LoginPage() {
                 </a>
               </p>
             </div>
-          </motion.div>
+          </div>
         </div>
 
         {/* Portal Selector */}
