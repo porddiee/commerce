@@ -1,7 +1,6 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
 import { Search, X, Map, List, Clock, TrendingUp, Loader2 } from 'lucide-react';
 import { ListingCard } from '@/components/ListingCard';
 import { Button } from '@/components/ui/button';
@@ -145,16 +144,14 @@ export default function SearchPage() {
               </h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {trendingSearches.map((search, index) => (
-                  <motion.button
+                  <button
                     key={search}
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
                     onClick={() => handleSearch(search)}
-                    className="flex items-center gap-3 p-4 bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 hover:border-brand-500 dark:hover:border-brand-500 transition-colors text-left"
+                    className="flex items-center gap-3 p-4 bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 hover:border-brand-500 dark:hover:border-brand-500 transition-colors text-left hover:scale-[1.02] active:scale-[0.98]"
                   >
                     <span className="text-2xl font-bold text-brand-500 w-8">#{index + 1}</span>
                     <span className="text-gray-900 dark:text-white font-medium">{search}</span>
-                  </motion.button>
+                  </button>
                 ))}
               </div>
             </div>
